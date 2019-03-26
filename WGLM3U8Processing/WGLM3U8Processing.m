@@ -1,0 +1,158 @@
+//
+//  WGLM3U8Processing.m
+//  WGLM3U8Processing
+//
+//  Created by wugl on 2019/3/25.
+//  Copyright © 2019年 WGLKit. All rights reserved.
+//
+
+#import "WGLM3U8Processing.h"
+#import "WGLM3U8Parser.h"
+#import "WGLM3U8DownloadManager.h"
+#import "WGLM3U8Helper.h"
+#import "FFmpegManager.h"
+
+@interface WGLM3U8Processing ()
+@property (nonatomic, strong) WGLM3U8Parser *parser;
+@property (nonatomic, strong) WGLM3U8DownloadManager *downloadManager;
+@property (nonatomic, copy) NSString *m3u8Url;
+@property (nonatomic, strong) NSMutableArray <NSString *> *filePaths;
+@end
+
+@implementation WGLM3U8Processing
+
++ (instancetype)sharedProcessing {
+    static WGLM3U8Processing *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[WGLM3U8Processing alloc] init];
+    });
+    return instance;
+}
+
+- (void)m3u8ToMp4:(NSString *)m3u8Url {
+    [self m3u8ToMp4:m3u8Url success:nil failure:nil];
+}
+
+- (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
+    self.m3u8Url = m3u8Url;
+    self.successBlock = success;
+    self.failureBlock = failure;
+    
+    //1、先下载m3u8文件，后解析，再拼接ts文件，最后再转码mp4
+    __weak typeof(self) weakSelf = self;
+    [self.downloadManager downloadWithURL:m3u8Url success:^(NSString *urlString, NSString *filePath) {
+        
+        //2、下载好m3u8文件，进行解析
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.parser parseM3U8FilePath:filePath m3u8Url:strongSelf.m3u8Url];
+        
+    } failure:^(NSString *urlString) {
+        
+    }];
+}
+
+
+#pragma mark - getter
+
+- (WGLM3U8Parser *)parser {
+    if (!_parser) {
+        _parser = [[WGLM3U8Parser alloc] init];
+        __weak typeof(self) weakSelf = self;
+        _parser.parseHandler = ^(WGLM3U8Parser *parser, BOOL result) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (result) {
+                
+                //3、解析好m3u8文件，开始循环下载ts文件
+                strongSelf.filePaths = [NSMutableArray array];
+                [strongSelf downloadTSFileWithIndex:0 playList:strongSelf.parser.m3u8Entity.playList];
+            }
+            else {
+                
+            }
+        };
+    }
+    return _parser;
+}
+
+- (WGLM3U8DownloadManager *)downloadManager {
+    if (!_downloadManager) {
+        _downloadManager = [[WGLM3U8DownloadManager alloc] init];
+    }
+    return _downloadManager;
+}
+
+#pragma mark - 下载TS文件、拼接TS文件
+
+- (void)downloadTSFileWithIndex:(NSInteger)index playList:(NSMutableArray <WGLTSEntity *> *)playList {
+    if (index >= playList.count) {
+        
+        //4、下载完成，对所有ts文件进行拼接
+        [self spliceTSFile];
+        return;
+    }
+    
+    WGLTSEntity *tsEntity = playList[index];
+    NSString *url = tsEntity.url;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.downloadManager downloadWithURL:url success:^(NSString *urlString, NSString *filePath) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (filePath) {
+            [strongSelf.filePaths addObject:filePath];
+        }
+        
+        //依次下载下一段ts
+        [strongSelf downloadTSFileWithIndex:index+1 playList:playList];
+        
+    } failure:^(NSString *urlString) {
+        
+    }];
+}
+
+//拼接
+- (void)spliceTSFile {
+    [self.filePaths enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:obj];
+        
+        //合并的视频跟切片ts视频在同一层目录下
+        NSString *tsPath = [self compositeTsFilePath];
+        NSFileHandle *fileHandler = [NSFileHandle fileHandleForWritingAtPath:tsPath];
+        [fileHandler writeData:data];
+    }];
+    
+    //5、合成视频后，进行转码 m3u8->mp4
+    [self convert];
+    
+}
+
+- (NSString *)compositeTsFilePath {
+    return [WGLM3U8Helper cacheFilePath:@"合成的原视频.ts"];
+}
+
+- (NSString *)mp4FilePath {
+    return [WGLM3U8Helper cacheFilePath:@"转码后的视频.mp4"];
+}
+
+//转码
+- (void)convert {
+    [[FFmpegManager sharedManager] converWithInputPath:[self compositeTsFilePath] outputPath:[self mp4FilePath] processBlock:^(float process) {
+        [NSString stringWithFormat:@"转码中 %.2f%%", process * 100];
+    } completionBlock:^(NSError *error) {
+        if (error) {
+            NSLog(@"转码失败 : %@", error);
+            if (self.failureBlock) {
+                self.failureBlock(self, self.m3u8Url);
+            }
+        } else {
+            NSLog(@"转码成功，请在相应路径查看，默认在沙盒Documents路径");
+            if (self.successBlock) {
+                self.successBlock(self, self.m3u8Url, [self mp4FilePath]);
+            }
+        }
+    }];
+}
+
+
+@end
