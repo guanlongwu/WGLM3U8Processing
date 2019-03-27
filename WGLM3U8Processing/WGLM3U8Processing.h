@@ -24,8 +24,8 @@ typedef void(^WGLM3U8ProcessingFailureBlock)(WGLM3U8Processing *processing, NSSt
 
 + (instancetype)sharedProcessing;
 
-- (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure;
+- (void)m3u8ToMp4WithUrl:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure;
 
-- (void)m3u8ToMp4:(NSString *)m3u8Url progress:(WGLM3U8ProcessingProgressBlock)progress success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure;
+- (void)m3u8ToMp4WithUrl:(NSString *)m3u8Url progress:(WGLM3U8ProcessingProgressBlock)progress success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure;
 
 @end

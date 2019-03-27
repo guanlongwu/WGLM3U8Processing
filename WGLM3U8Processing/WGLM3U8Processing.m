@@ -31,10 +31,10 @@
 }
 
 - (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
-    [self m3u8ToMp4:m3u8Url progress:nil success:success failure:failure];
+    [self m3u8ToMp4WithUrl:m3u8Url progress:nil success:success failure:failure];
 }
 
-- (void)m3u8ToMp4:(NSString *)m3u8Url progress:(WGLM3U8ProcessingProgressBlock)progress success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
+- (void)m3u8ToMp4WithUrl:(NSString *)m3u8Url progress:(WGLM3U8ProcessingProgressBlock)progress success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
     self.m3u8Url = m3u8Url;
     self.progressBlock = progress;
     self.successBlock = success;
