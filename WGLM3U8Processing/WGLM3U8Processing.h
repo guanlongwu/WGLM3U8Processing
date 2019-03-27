@@ -18,4 +18,8 @@ typedef void(^WGLM3U8ProcessingFailureBlock)(WGLM3U8Processing *processing, NSSt
 @property (nonatomic, copy) WGLM3U8ProcessingSuccessBlock successBlock;
 @property (nonatomic, copy) WGLM3U8ProcessingFailureBlock failureBlock;
 
++ (instancetype)sharedProcessing;
+
+- (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure;
+
 @end

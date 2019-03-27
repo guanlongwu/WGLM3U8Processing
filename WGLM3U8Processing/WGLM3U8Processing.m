@@ -30,10 +30,6 @@
     return instance;
 }
 
-- (void)m3u8ToMp4:(NSString *)m3u8Url {
-    [self m3u8ToMp4:m3u8Url success:nil failure:nil];
-}
-
 - (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
     self.m3u8Url = m3u8Url;
     self.successBlock = success;
@@ -82,7 +78,7 @@
     return _downloadManager;
 }
 
-#pragma mark - 下载TS文件、拼接TS文件
+#pragma mark - 下载TS文件、拼接TS文件、转码MP4
 
 - (void)downloadTSFileWithIndex:(NSInteger)index playList:(NSMutableArray <WGLTSEntity *> *)playList {
     if (index >= playList.count) {
@@ -127,14 +123,6 @@
     
 }
 
-- (NSString *)compositeTsFilePath {
-    return [WGLM3U8Helper cacheFilePath:@"合成的原视频.ts"];
-}
-
-- (NSString *)mp4FilePath {
-    return [WGLM3U8Helper cacheFilePath:@"转码后的视频.mp4"];
-}
-
 //转码
 - (void)convert {
     [[FFmpegManager sharedManager] converWithInputPath:[self compositeTsFilePath] outputPath:[self mp4FilePath] processBlock:^(float process) {
@@ -153,6 +141,17 @@
         }
     }];
 }
+
+#pragma mark - private
+
+- (NSString *)compositeTsFilePath {
+    return [WGLM3U8Helper cacheFilePath:@"合成的原视频.ts"];
+}
+
+- (NSString *)mp4FilePath {
+    return [WGLM3U8Helper cacheFilePath:@"转码后的视频.mp4"];
+}
+
 
 
 @end
