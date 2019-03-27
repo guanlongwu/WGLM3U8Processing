@@ -31,7 +31,12 @@
 }
 
 - (void)m3u8ToMp4:(NSString *)m3u8Url success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
+    [self m3u8ToMp4:m3u8Url progress:nil success:success failure:failure];
+}
+
+- (void)m3u8ToMp4:(NSString *)m3u8Url progress:(WGLM3U8ProcessingProgressBlock)progress success:(WGLM3U8ProcessingSuccessBlock)success failure:(WGLM3U8ProcessingFailureBlock)failure {
     self.m3u8Url = m3u8Url;
+    self.progressBlock = progress;
     self.successBlock = success;
     self.failureBlock = failure;
     
@@ -125,16 +130,24 @@
 
 //转码
 - (void)convert {
-    [[FFmpegManager sharedManager] converWithInputPath:[self compositeTsFilePath] outputPath:[self mp4FilePath] processBlock:^(float process) {
-        [NSString stringWithFormat:@"转码中 %.2f%%", process * 100];
+    NSString *inputPath = [self compositeTsFilePath];
+    NSString *outputPath = [self mp4FilePath];
+    [[FFmpegManager sharedManager] converWithInputPath:inputPath outputPath:outputPath processBlock:^(float process) {
+        
+        NSLog(@"转码进度：%.2f%%\n", process * 100);
+        if (self.progressBlock) {
+            self.progressBlock(self, self.m3u8Url, process);
+        }
+
     } completionBlock:^(NSError *error) {
+        
         if (error) {
             NSLog(@"转码失败 : %@", error);
             if (self.failureBlock) {
                 self.failureBlock(self, self.m3u8Url);
             }
         } else {
-            NSLog(@"转码成功，请在相应路径查看，默认在沙盒Documents路径");
+            NSLog(@"转码成功，请在相应路径查看：%@\n", [self mp4FilePath]);
             if (self.successBlock) {
                 self.successBlock(self, self.m3u8Url, [self mp4FilePath]);
             }
