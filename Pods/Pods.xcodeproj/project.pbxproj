@@ -1,0 +1,689 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A3D891C5645FE4E91325E755562A987 /* WGLDownloadProvider-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = BD319AF75D3526C225E9E86570130C8A /* WGLDownloadProvider-Info.plist */; };
+		0AE609D111CA04139E29407A20BFD654 /* WGLDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C60F9169212B7FDB5575BC0E12C98D /* WGLDownloader.m */; };
+		0F0803C92D3499C7602B1334230D223F /* WGLDownloadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A6932B04A3AE6DD505A7B2499A5F9 /* WGLDownloadDelegate.m */; };
+		1F2E96C9F3BC72DC600514B598B9FDB4 /* WGLDownloadProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDC6B7F289234D9A378663840EBF1FC /* WGLDownloadProvider.m */; };
+		2EAF715602D8C8DC5521477017FA62E5 /* WGLFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 545FCEFA40469501051AFEC101C90223 /* WGLFileCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4BE8BFF1C64F36F42A5D394126183948 /* Pods-WGLM3U8Processing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD88A2DE8D72AE26AB2C4888C8F5FC3 /* Pods-WGLM3U8Processing-dummy.m */; };
+		4FBA50A6A63D96BA1E83FBB88E4B76C7 /* WGLDownloadProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A535AAC29FEBF521239D2DC3863E3036 /* WGLDownloadProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		64C6F1850B39A8D86EC26E46A99D97AC /* WGLDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B1BC6626B313D7EE68DA93A4560704 /* WGLDownloadTask.m */; };
+		9D912500EA7B20DE5C7FF7DDBAC2FCBB /* WGLDownloadTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 28AB57BA7061755F613C07DC3FF73200 /* WGLDownloadTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AABDEBF9C1D4A66E7D29AD9DF51D92AE /* WGLDownloadUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 443C5CAC10F034CDE7E6DEB804E831F8 /* WGLDownloadUtil.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AE6A6BFE25FFA59A212E1AAEA2E09ED9 /* WGLDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3475C2EA50CC219366FFB096A7D4E263 /* WGLDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BE6028ACC5CF01EC6CAE8DF12B3D0F7D /* WGLDownloadProvider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD232AB3CD25F1963FE93691D7F87FB /* WGLDownloadProvider-dummy.m */; };
+		E4FAC2DCA356D6C734E5CFF92CD4856D /* WGLFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DAB524C8DFF8E3841A66093C754B7 /* WGLFileCache.m */; };
+		E64F4F57DAC4A5913BB0FD88D23EEE5A /* WGLDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0353FB35441E7AFA6EB6112721438170 /* WGLDownloadDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EDE13ED69D1C3186E3A6040842DB9F19 /* WGLFileCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6E66F57FCBD4EF2B528441730C030 /* WGLFileCache-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		290C3F94439FBBEFBA1484B5EC210DCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8E94CBF36B0E28850DCB2AC99EC8716;
+			remoteInfo = WGLFileCache;
+		};
+		2E34B5B5D678B4483B1645935A7E9F91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 871DE9EC54B8673BFC7419B8648BAE3F;
+			remoteInfo = WGLDownloadProvider;
+		};
+		C98A835A594D6C772603EDCEFCC7F268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8E94CBF36B0E28850DCB2AC99EC8716;
+			remoteInfo = WGLFileCache;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0353FB35441E7AFA6EB6112721438170 /* WGLDownloadDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLDownloadDelegate.h; path = WGLDownloadProvider/Delegate/WGLDownloadDelegate.h; sourceTree = "<group>"; };
+		06EB2F093D32FB3ED04EB2448BD3D8C2 /* WGLFileCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WGLFileCache-prefix.pch"; sourceTree = "<group>"; };
+		0A8875A611965CD1279A515EC5744D93 /* libWGLFileCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libWGLFileCache.a; path = libWGLFileCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BB981CD157F08C389830B0FB502D4CD /* Pods-WGLM3U8Processing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGLM3U8Processing.release.xcconfig"; sourceTree = "<group>"; };
+		11B1BC6626B313D7EE68DA93A4560704 /* WGLDownloadTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WGLDownloadTask.m; path = WGLDownloadProvider/Task/WGLDownloadTask.m; sourceTree = "<group>"; };
+		183A6932B04A3AE6DD505A7B2499A5F9 /* WGLDownloadDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WGLDownloadDelegate.m; path = WGLDownloadProvider/Delegate/WGLDownloadDelegate.m; sourceTree = "<group>"; };
+		21AFF00F2A28EE8D5E60272900CBCD0C /* WGLFileCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WGLFileCache.xcconfig; sourceTree = "<group>"; };
+		22C60F9169212B7FDB5575BC0E12C98D /* WGLDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WGLDownloader.m; path = WGLDownloadProvider/Downloader/WGLDownloader.m; sourceTree = "<group>"; };
+		28AB57BA7061755F613C07DC3FF73200 /* WGLDownloadTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLDownloadTask.h; path = WGLDownloadProvider/Task/WGLDownloadTask.h; sourceTree = "<group>"; };
+		3475C2EA50CC219366FFB096A7D4E263 /* WGLDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLDownloader.h; path = WGLDownloadProvider/Downloader/WGLDownloader.h; sourceTree = "<group>"; };
+		3AF178E76625138D78F7B6C7BB73CFB5 /* libPods-WGLM3U8Processing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WGLM3U8Processing.a"; path = "libPods-WGLM3U8Processing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41CAEFDFFDB3C286B7C62A71E3520B12 /* Pods-WGLM3U8Processing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGLM3U8Processing.debug.xcconfig"; sourceTree = "<group>"; };
+		443C5CAC10F034CDE7E6DEB804E831F8 /* WGLDownloadUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLDownloadUtil.h; path = WGLDownloadProvider/WGLDownloadUtil.h; sourceTree = "<group>"; };
+		4F90550A41F47F7CA9160663FF560C68 /* WGLDownloadProvider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WGLDownloadProvider-prefix.pch"; sourceTree = "<group>"; };
+		545FCEFA40469501051AFEC101C90223 /* WGLFileCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLFileCache.h; path = WGLFileCache/WGLFileCache.h; sourceTree = "<group>"; };
+		5BD232AB3CD25F1963FE93691D7F87FB /* WGLDownloadProvider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WGLDownloadProvider-dummy.m"; sourceTree = "<group>"; };
+		7BA6E66F57FCBD4EF2B528441730C030 /* WGLFileCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WGLFileCache-dummy.m"; sourceTree = "<group>"; };
+		82ABEC5DD9A36A21E8E0E5D188D7C6AA /* libWGLDownloadProvider.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libWGLDownloadProvider.a; path = libWGLDownloadProvider.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD88A2DE8D72AE26AB2C4888C8F5FC3 /* Pods-WGLM3U8Processing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGLM3U8Processing-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A535AAC29FEBF521239D2DC3863E3036 /* WGLDownloadProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WGLDownloadProvider.h; path = WGLDownloadProvider/WGLDownloadProvider.h; sourceTree = "<group>"; };
+		A56B054F1D330D33BF66492181B8C7E7 /* Pods-WGLM3U8Processing-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WGLM3U8Processing-acknowledgements.plist"; sourceTree = "<group>"; };
+		BD319AF75D3526C225E9E86570130C8A /* WGLDownloadProvider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "WGLDownloadProvider-Info.plist"; path = "WGLDownloadProvider/WGLDownloadProvider-Info.plist"; sourceTree = "<group>"; };
+		C8BB5B675CD849D289E2BD7CEC8C40C7 /* Pods-WGLM3U8Processing-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGLM3U8Processing-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC2DAB524C8DFF8E3841A66093C754B7 /* WGLFileCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WGLFileCache.m; path = WGLFileCache/WGLFileCache.m; sourceTree = "<group>"; };
+		D271EDD2247BEE136C7C72ED39C11C65 /* WGLDownloadProvider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WGLDownloadProvider.xcconfig; sourceTree = "<group>"; };
+		DBDC6B7F289234D9A378663840EBF1FC /* WGLDownloadProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WGLDownloadProvider.m; path = WGLDownloadProvider/WGLDownloadProvider.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C42EF4C59211A29EA03B70EACDC4D7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F161B199606CBC2C624A8B6D12CFE0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5937D248C4ACD9C614BB300180134F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1325BF09B4253B79DEBB80749C875CBA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B87CFBD40B425D3E40D09F6BE6C1EDFB /* Pods-WGLM3U8Processing */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		209049ADAF944A3BBAD25C1C291B19BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				21AFF00F2A28EE8D5E60272900CBCD0C /* WGLFileCache.xcconfig */,
+				7BA6E66F57FCBD4EF2B528441730C030 /* WGLFileCache-dummy.m */,
+				06EB2F093D32FB3ED04EB2448BD3D8C2 /* WGLFileCache-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WGLFileCache";
+			sourceTree = "<group>";
+		};
+		3E183285C707D2F4C6F8D4E54C61FA97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5DC39E6656E4B386DE8765254312CB0 /* WGLDownloadProvider */,
+				40DED8DECD395137608872D7E340F1F9 /* WGLFileCache */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		40DED8DECD395137608872D7E340F1F9 /* WGLFileCache */ = {
+			isa = PBXGroup;
+			children = (
+				545FCEFA40469501051AFEC101C90223 /* WGLFileCache.h */,
+				CC2DAB524C8DFF8E3841A66093C754B7 /* WGLFileCache.m */,
+				209049ADAF944A3BBAD25C1C291B19BA /* Support Files */,
+			);
+			name = WGLFileCache;
+			path = WGLFileCache;
+			sourceTree = "<group>";
+		};
+		75ECF5DAEB57B11DBAB97D7451EF4E92 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D271EDD2247BEE136C7C72ED39C11C65 /* WGLDownloadProvider.xcconfig */,
+				5BD232AB3CD25F1963FE93691D7F87FB /* WGLDownloadProvider-dummy.m */,
+				4F90550A41F47F7CA9160663FF560C68 /* WGLDownloadProvider-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WGLDownloadProvider";
+			sourceTree = "<group>";
+		};
+		A5DC39E6656E4B386DE8765254312CB0 /* WGLDownloadProvider */ = {
+			isa = PBXGroup;
+			children = (
+				0353FB35441E7AFA6EB6112721438170 /* WGLDownloadDelegate.h */,
+				183A6932B04A3AE6DD505A7B2499A5F9 /* WGLDownloadDelegate.m */,
+				3475C2EA50CC219366FFB096A7D4E263 /* WGLDownloader.h */,
+				22C60F9169212B7FDB5575BC0E12C98D /* WGLDownloader.m */,
+				A535AAC29FEBF521239D2DC3863E3036 /* WGLDownloadProvider.h */,
+				DBDC6B7F289234D9A378663840EBF1FC /* WGLDownloadProvider.m */,
+				BD319AF75D3526C225E9E86570130C8A /* WGLDownloadProvider-Info.plist */,
+				28AB57BA7061755F613C07DC3FF73200 /* WGLDownloadTask.h */,
+				11B1BC6626B313D7EE68DA93A4560704 /* WGLDownloadTask.m */,
+				443C5CAC10F034CDE7E6DEB804E831F8 /* WGLDownloadUtil.h */,
+				75ECF5DAEB57B11DBAB97D7451EF4E92 /* Support Files */,
+			);
+			name = WGLDownloadProvider;
+			path = WGLDownloadProvider;
+			sourceTree = "<group>";
+		};
+		A6342EBF31A2D69E90749CDE30237997 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AF178E76625138D78F7B6C7BB73CFB5 /* libPods-WGLM3U8Processing.a */,
+				82ABEC5DD9A36A21E8E0E5D188D7C6AA /* libWGLDownloadProvider.a */,
+				0A8875A611965CD1279A515EC5744D93 /* libWGLFileCache.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B87CFBD40B425D3E40D09F6BE6C1EDFB /* Pods-WGLM3U8Processing */ = {
+			isa = PBXGroup;
+			children = (
+				C8BB5B675CD849D289E2BD7CEC8C40C7 /* Pods-WGLM3U8Processing-acknowledgements.markdown */,
+				A56B054F1D330D33BF66492181B8C7E7 /* Pods-WGLM3U8Processing-acknowledgements.plist */,
+				9CD88A2DE8D72AE26AB2C4888C8F5FC3 /* Pods-WGLM3U8Processing-dummy.m */,
+				41CAEFDFFDB3C286B7C62A71E3520B12 /* Pods-WGLM3U8Processing.debug.xcconfig */,
+				0BB981CD157F08C389830B0FB502D4CD /* Pods-WGLM3U8Processing.release.xcconfig */,
+			);
+			name = "Pods-WGLM3U8Processing";
+			path = "Target Support Files/Pods-WGLM3U8Processing";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				3E183285C707D2F4C6F8D4E54C61FA97 /* Pods */,
+				A6342EBF31A2D69E90749CDE30237997 /* Products */,
+				1325BF09B4253B79DEBB80749C875CBA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		754425ECBF67E06594355AFDA265B0B8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64F4F57DAC4A5913BB0FD88D23EEE5A /* WGLDownloadDelegate.h in Headers */,
+				AE6A6BFE25FFA59A212E1AAEA2E09ED9 /* WGLDownloader.h in Headers */,
+				4FBA50A6A63D96BA1E83FBB88E4B76C7 /* WGLDownloadProvider.h in Headers */,
+				9D912500EA7B20DE5C7FF7DDBAC2FCBB /* WGLDownloadTask.h in Headers */,
+				AABDEBF9C1D4A66E7D29AD9DF51D92AE /* WGLDownloadUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5F3084EFA5412E5C658DE37AF68524A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EAF715602D8C8DC5521477017FA62E5 /* WGLFileCache.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BD2B056E2194B3F21BE2121F8E5BAC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4060F2A8E1D9BDD7EDE4ADC9D8D70E40 /* Pods-WGLM3U8Processing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50130D0E50EB1C8F93BFEF2963E1FAAF /* Build configuration list for PBXNativeTarget "Pods-WGLM3U8Processing" */;
+			buildPhases = (
+				D2BD2B056E2194B3F21BE2121F8E5BAC /* Headers */,
+				D5468893FD781636146C07D359519188 /* Sources */,
+				2F161B199606CBC2C624A8B6D12CFE0F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4810605438817AC1E803E9D448DA303 /* PBXTargetDependency */,
+				3319CE6211441ACC1839A28570FD9C61 /* PBXTargetDependency */,
+			);
+			name = "Pods-WGLM3U8Processing";
+			productName = "Pods-WGLM3U8Processing";
+			productReference = 3AF178E76625138D78F7B6C7BB73CFB5 /* libPods-WGLM3U8Processing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		871DE9EC54B8673BFC7419B8648BAE3F /* WGLDownloadProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D22C7976189D257C6E441BAEAB4A2A /* Build configuration list for PBXNativeTarget "WGLDownloadProvider" */;
+			buildPhases = (
+				754425ECBF67E06594355AFDA265B0B8 /* Headers */,
+				798D7ACEC17A85EE9903F4FC187F30F0 /* Sources */,
+				0C42EF4C59211A29EA03B70EACDC4D7A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				820FC0CBC80997CCCF0B259BA64FEEC7 /* PBXTargetDependency */,
+			);
+			name = WGLDownloadProvider;
+			productName = WGLDownloadProvider;
+			productReference = 82ABEC5DD9A36A21E8E0E5D188D7C6AA /* libWGLDownloadProvider.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B8E94CBF36B0E28850DCB2AC99EC8716 /* WGLFileCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA7CCAD146A9BEA56BA26263D159D52 /* Build configuration list for PBXNativeTarget "WGLFileCache" */;
+			buildPhases = (
+				A5F3084EFA5412E5C658DE37AF68524A /* Headers */,
+				3D3D93102A00C738197E9469C176F3D1 /* Sources */,
+				5937D248C4ACD9C614BB300180134F25 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WGLFileCache;
+			productName = WGLFileCache;
+			productReference = 0A8875A611965CD1279A515EC5744D93 /* libWGLFileCache.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A6342EBF31A2D69E90749CDE30237997 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4060F2A8E1D9BDD7EDE4ADC9D8D70E40 /* Pods-WGLM3U8Processing */,
+				871DE9EC54B8673BFC7419B8648BAE3F /* WGLDownloadProvider */,
+				B8E94CBF36B0E28850DCB2AC99EC8716 /* WGLFileCache */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D3D93102A00C738197E9469C176F3D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE13ED69D1C3186E3A6040842DB9F19 /* WGLFileCache-dummy.m in Sources */,
+				E4FAC2DCA356D6C734E5CFF92CD4856D /* WGLFileCache.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		798D7ACEC17A85EE9903F4FC187F30F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0803C92D3499C7602B1334230D223F /* WGLDownloadDelegate.m in Sources */,
+				0AE609D111CA04139E29407A20BFD654 /* WGLDownloader.m in Sources */,
+				BE6028ACC5CF01EC6CAE8DF12B3D0F7D /* WGLDownloadProvider-dummy.m in Sources */,
+				0A3D891C5645FE4E91325E755562A987 /* WGLDownloadProvider-Info.plist in Sources */,
+				1F2E96C9F3BC72DC600514B598B9FDB4 /* WGLDownloadProvider.m in Sources */,
+				64C6F1850B39A8D86EC26E46A99D97AC /* WGLDownloadTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5468893FD781636146C07D359519188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE8BFF1C64F36F42A5D394126183948 /* Pods-WGLM3U8Processing-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3319CE6211441ACC1839A28570FD9C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WGLFileCache;
+			target = B8E94CBF36B0E28850DCB2AC99EC8716 /* WGLFileCache */;
+			targetProxy = C98A835A594D6C772603EDCEFCC7F268 /* PBXContainerItemProxy */;
+		};
+		820FC0CBC80997CCCF0B259BA64FEEC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WGLFileCache;
+			target = B8E94CBF36B0E28850DCB2AC99EC8716 /* WGLFileCache */;
+			targetProxy = 290C3F94439FBBEFBA1484B5EC210DCE /* PBXContainerItemProxy */;
+		};
+		A4810605438817AC1E803E9D448DA303 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WGLDownloadProvider;
+			target = 871DE9EC54B8673BFC7419B8648BAE3F /* WGLDownloadProvider */;
+			targetProxy = 2E34B5B5D678B4483B1645935A7E9F91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05DF210AC65EBB0E593AAF976B2C2177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2323673D48519404D6954DB8E9980118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D271EDD2247BEE136C7C72ED39C11C65 /* WGLDownloadProvider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/WGLDownloadProvider/WGLDownloadProvider-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = WGLDownloadProvider;
+				PRODUCT_NAME = WGLDownloadProvider;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		421ECB1396280A8D83853C3DDBED1700 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		466A9DA0D898C160C1F725F78DEAD41A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21AFF00F2A28EE8D5E60272900CBCD0C /* WGLFileCache.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/WGLFileCache/WGLFileCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = WGLFileCache;
+				PRODUCT_NAME = WGLFileCache;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AB99E3BD2F0084A58174937F68E2270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21AFF00F2A28EE8D5E60272900CBCD0C /* WGLFileCache.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/WGLFileCache/WGLFileCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = WGLFileCache;
+				PRODUCT_NAME = WGLFileCache;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB925727D97065DEEB36AD77E7356244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CAEFDFFDB3C286B7C62A71E3520B12 /* Pods-WGLM3U8Processing.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBE2CE0975D21DCAC697806D76A7B517 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D271EDD2247BEE136C7C72ED39C11C65 /* WGLDownloadProvider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/WGLDownloadProvider/WGLDownloadProvider-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = WGLDownloadProvider;
+				PRODUCT_NAME = WGLDownloadProvider;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0F7EC416FC6BFC2868FAC63DD53A346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB981CD157F08C389830B0FB502D4CD /* Pods-WGLM3U8Processing.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FA7CCAD146A9BEA56BA26263D159D52 /* Build configuration list for PBXNativeTarget "WGLFileCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB99E3BD2F0084A58174937F68E2270 /* Debug */,
+				466A9DA0D898C160C1F725F78DEAD41A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421ECB1396280A8D83853C3DDBED1700 /* Debug */,
+				05DF210AC65EBB0E593AAF976B2C2177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50130D0E50EB1C8F93BFEF2963E1FAAF /* Build configuration list for PBXNativeTarget "Pods-WGLM3U8Processing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB925727D97065DEEB36AD77E7356244 /* Debug */,
+				F0F7EC416FC6BFC2868FAC63DD53A346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7D22C7976189D257C6E441BAEAB4A2A /* Build configuration list for PBXNativeTarget "WGLDownloadProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE2CE0975D21DCAC697806D76A7B517 /* Debug */,
+				2323673D48519404D6954DB8E9980118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

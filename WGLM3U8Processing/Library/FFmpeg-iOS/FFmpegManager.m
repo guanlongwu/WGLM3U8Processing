@@ -32,7 +32,7 @@
 
 // 转换视频
 - (void)converWithInputPath:(NSString *)inputPath
-                 outputPath:(NSString *)outpath
+                 outputPath:(NSString *)outputPath
                processBlock:(void (^)(float process))processBlock
             completionBlock:(void (^)(NSError *error))completionBlock {
     self.processBlock = processBlock;
@@ -41,7 +41,7 @@
     
     // ffmpeg语法，可根据需求自行更改
     // !#$ 为分割标记符，也可以使用空格代替
-    NSString *commandStr = [NSString stringWithFormat:@"ffmpeg!#$-ss!#$00:00:00!#$-i!#$%@!#$-b:v!#$2000K!#$-y!#$%@", inputPath, outpath];
+    NSString *commandStr = [NSString stringWithFormat:@"ffmpeg!#$-ss!#$00:00:00!#$-i!#$%@!#$-b:v!#$2000K!#$-y!#$%@", inputPath, outputPath];
     
     // 放在子线程运行
     [[[NSThread alloc] initWithTarget:self selector:@selector(runCmd:) object:commandStr] start];

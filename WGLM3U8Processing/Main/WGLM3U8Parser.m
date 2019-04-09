@@ -19,9 +19,22 @@
 @implementation WGLM3U8Parser
 
 - (void)parseM3U8FilePath:(NSString *)filePath m3u8Url:(NSString *)urlString {
-    //解析出m3u8内容
+    [self parseM3U8FilePath:filePath m3u8Url:urlString completion:nil];
+}
+
+- (void)parseM3U8FilePath:(NSString *)filePath m3u8Url:(NSString *)urlString completion:(WGLM3U8ParseHandler)completion {
+    //获取m3u8内容
     NSString *m3u8Content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    [self parseM3U8Content:m3u8Content m3u8Url:urlString completion:completion];
+}
+
+- (void)parseM3U8Content:(NSString *)m3u8Content m3u8Url:(NSString *)urlString {
+    [self parseM3U8Content:m3u8Content m3u8Url:urlString completion:nil];
+}
+
+- (void)parseM3U8Content:(NSString *)m3u8Content m3u8Url:(NSString *)urlString completion:(WGLM3U8ParseHandler)completion {
     self.m3u8Content = m3u8Content;
+    self.parseHandler = completion;
     
     if (m3u8Content.length == 0) {
         if (self.parseHandler) {
@@ -41,6 +54,8 @@
     //解析m3u8内容，获取ts数据
     [self convertM3U8ToModel:m3u8Content];
 }
+
+#pragma mark -
 
 - (void)convertM3U8ToModel:(NSString *)m3u8Content {
     NSString *m3u8String = [NSString stringWithFormat:@"%@", m3u8Content];
@@ -101,7 +116,7 @@
 
 - (NSString *)completeTSUrl:(NSString *)urlString {
     if (NO == ([urlString hasPrefix:@"http://"] || [urlString hasPrefix:@"https://"])) {
-        //ts文件下载url有可能不是完整的下载url，那么就是缺少了跟m3u8同一层目录的下载url
+        //ts文件下载url有可能不是完整的下载url，那么就是缺少了跟m3u8文件同一层目录的服务器路径
         if ([self checkIsValidUrl:self.m3u8Url]) {
             NSString *urlPrefix = [NSString stringWithFormat:@"%@", self.m3u8Url];
             while (NO == [urlPrefix hasSuffix:@"/"]) {

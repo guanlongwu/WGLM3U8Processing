@@ -1,0 +1,1 @@
+../../../WGLDownloadProvider/WGLDownloadProvider/Delegate/WGLDownloadDelegate.h

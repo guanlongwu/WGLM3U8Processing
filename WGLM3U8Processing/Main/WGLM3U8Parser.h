@@ -23,11 +23,37 @@ typedef void(^WGLM3U8ParseHandler)(WGLM3U8Parser *parser, BOOL result);    //解
 @property (nonatomic, copy) WGLM3U8ParseHandler parseHandler;
 
 /**
- 解析M3U8文件
+ 解析m3u8文件
 
- @param filePath M3U8文件的本地路径
- @param urlString M3U8文件的下载地址
+ @param filePath m3u8文件的本地路径
+ @param urlString m3u8文件的下载地址
  */
 - (void)parseM3U8FilePath:(NSString *)filePath m3u8Url:(NSString *)urlString;
+
+/**
+ 解析m3u8文件
+
+ @param filePath m3u8文件的本地路径
+ @param urlString m3u8文件的下载地址
+ @param completion 解析完成的回调
+ */
+- (void)parseM3U8FilePath:(NSString *)filePath m3u8Url:(NSString *)urlString completion:(WGLM3U8ParseHandler)completion;
+
+/**
+ 解析m3u8文件
+
+ @param m3u8Content m3u8文件的内容
+ @param urlString m3u8文件的下载地址
+ */
+- (void)parseM3U8Content:(NSString *)m3u8Content m3u8Url:(NSString *)urlString;
+
+/**
+ 解析m3u8文件
+ 
+ @param m3u8Content m3u8文件的内容
+ @param urlString m3u8文件的下载地址
+ @param completion 解析完成的回调
+ */
+- (void)parseM3U8Content:(NSString *)m3u8Content m3u8Url:(NSString *)urlString completion:(WGLM3U8ParseHandler)completion;
 
 @end

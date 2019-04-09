@@ -16,6 +16,6 @@ typedef void(^WGLM3U8DownloadManagerHandler)(WGLM3U8DownloadManager *manager, NS
 @property (nonatomic, copy) NSString *urlString;
 
 //下载
-- (void)downloadWithURL:(NSString *)urlString success:(void(^)(NSString *urlString, NSString *filePath))success failure:(void(^)(NSString *urlString))failure;
+- (void)downloadWithURL:(NSString *)urlString progress:(void(^)(NSString *urlString, uint64_t receiveLength, uint64_t totalLength))progress success:(void(^)(NSString *urlString, NSString *filePath))success failure:(void(^)(NSString *urlString))failure;
 
 @end
