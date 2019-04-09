@@ -12,6 +12,11 @@
  转码弊端：
  如果上述xx/xx/output.mp4已经存在，则ffmpeg上述指令会crash，
  因此，在执行上述指令之前，先确保output的路径文件不存在。
+ 
+ 注意事项：
+ 如果合并后的ts文件重复合并了（合并后的ts文件大于真实视频大小），
+ 会导致ffmpeg读取视频时长duration和转码当前时间time出错（time/duration > 1，从而导致出现超过100%的转码进度）
+ 所以，合并ts视频文件，注意小心别出错。
  */
 
 #import <Foundation/Foundation.h>
