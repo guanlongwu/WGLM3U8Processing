@@ -10,8 +10,10 @@
  ffmpeg  -i  xx/xx/input.ts  -b:v  640k  xx/xx/output.mp4
  
  转码弊端：
- 如果上述xx/xx/output.mp4已经存在，则ffmpeg上述指令会crash，
+ 1、如果上述xx/xx/output.mp4已经存在，则ffmpeg上述指令会crash，
  因此，在执行上述指令之前，先确保output的路径文件不存在。
+ 2、如果在转码过程中，app发生crash退出了，会导致本地存在一份 非完整的mp4 缓存文件，
+ 下次进行转码的时候，会判断已经有缓存，而不会继续进行转码了。
  
  注意事项：
  如果合并后的ts文件重复合并了（合并后的ts文件大于真实视频大小），
