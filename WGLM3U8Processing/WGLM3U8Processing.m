@@ -184,7 +184,7 @@
         [strongSelf downloadTSFileWithIndex:index+1 playList:playList];
         
     } failure:^(NSString *urlString) {
-        NSLog(@"");
+        NSLog(@"视频片段下载失败：index : %ld, urlString : %@", (long)index, urlString);
     }];
 }
 

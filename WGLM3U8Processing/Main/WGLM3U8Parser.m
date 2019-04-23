@@ -118,11 +118,8 @@
     if (NO == ([urlString hasPrefix:@"http://"] || [urlString hasPrefix:@"https://"])) {
         //ts文件下载url有可能不是完整的下载url，那么就是缺少了跟m3u8文件同一层目录的服务器路径
         if ([self checkIsValidUrl:self.m3u8Url]) {
-            NSString *urlPrefix = [NSString stringWithFormat:@"%@", self.m3u8Url];
-            while (NO == [urlPrefix hasSuffix:@"/"]) {
-                urlPrefix = [urlPrefix substringToIndex:urlPrefix.length-1];
-            }
-            NSString *result = [NSString stringWithFormat:@"%@%@", urlPrefix, urlString];
+            NSString *urlPathDirectory = [self.m3u8Url stringByDeletingLastPathComponent];
+            NSString *result = [NSString stringWithFormat:@"%@/%@", urlPathDirectory, urlString];
             return result;
         }
     }
