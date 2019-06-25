@@ -194,31 +194,33 @@
     NSString *tsPath = [self compositeTsFilePath];
     if (YES == [[NSFileManager defaultManager] fileExistsAtPath:tsPath]) {
         //文件已存在
-        
-        //5、合成视频后，进行转码 m3u8->mp4
-        [self convert];
-        return;
-    }
-    else {
-        //不存在，则创建一个空的文件
-        
-        BOOL success = [[NSFileManager defaultManager] createFileAtPath:tsPath contents:[NSData data] attributes:nil];
-        if (NO == success) {
-            NSLog(@"创建文件失败");
+        NSError *error = nil;
+        BOOL result = [[NSFileManager defaultManager] removeItemAtPath:tsPath error:&error];
+        if (NO == result
+            || error) {
+            NSLog(@"remove file fail!");
         }
+    }
+    
+    //创建一个空的文件
+    BOOL success = [[NSFileManager defaultManager] createFileAtPath:tsPath contents:[NSData data] attributes:nil];
+    if (NO == success) {
+        NSLog(@"创建文件失败");
     }
     
     //开始合并
     NSFileHandle *fileHandler = [NSFileHandle fileHandleForWritingAtPath:tsPath];
     
     [self.filePaths enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:obj];
-        
-        //合并的视频跟切片ts视频在同一层目录下
-        [fileHandler writeData:data];
-        
-        //跳到文件末尾
-        [fileHandler seekToEndOfFile];
+        @autoreleasepool {
+            NSData *data = [[NSData alloc] initWithContentsOfFile:obj];
+            
+            //合并的视频跟切片ts视频在同一层目录下
+            [fileHandler writeData:data];
+            
+            //跳到文件末尾
+            [fileHandler seekToEndOfFile];
+        }
     }];
     
     //关闭文件
