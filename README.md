@@ -1,6 +1,23 @@
 # WGLM3U8Processing
 This a m3u8 processing tool
 
+一、功能概述：
+提供一个m3u8文件的服务器url，这个库会为了生成一个相应视频的mp4文件。
+
+二、内部流程：
+1、下载m3u8文件；
+2、解析m3u8文件的内容；
+3、依次下载ts文件；
+4、合并所有ts文件；
+5、进行转码：ts --> mp4；
+6、mp4存本地；
+
+三、框架特点：
+1、内部集成了FFmpeg库（具体集成方法可参考文章后半段）；
+2、转码主要采用命令行的方式，通过修改FFmpeg的main函数，传转码指令进去进行转码；
+3、下载采用了我写的WGLDownloadProvider(支持断点续传下载、支持分片缓存避免内存暴涨);
+4、缓存采用了我写的WGLFileCache;
+
 
                 iOS集成FFmpeg
 
