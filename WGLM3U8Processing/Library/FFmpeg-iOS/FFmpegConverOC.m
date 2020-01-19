@@ -11,8 +11,8 @@
 #import "FFmpegManager.h"
 
 // 转换停止回调
-void stopRuning(void) {
-    [FFmpegManager stopRuning];
+void stopRuning(int isCancel) {
+    [FFmpegManager stopRuning:isCancel];
 }
 
 // 获取总时间长度

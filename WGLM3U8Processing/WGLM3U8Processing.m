@@ -233,17 +233,17 @@
 
 //转码
 - (void)convert {
-    NSString *inputPath = [self compositeTsFilePath];
-    NSString *outputPath = [self mp4FilePath];
-    if (YES == [[NSFileManager defaultManager] fileExistsAtPath:outputPath]) {
+    NSString *tsFilePath = [self compositeTsFilePath];
+    NSString *mp4FilePath = [self mp4FilePath];
+    if (YES == [[NSFileManager defaultManager] fileExistsAtPath:mp4FilePath]) {
         //mp4文件已存在
         
         if (self.successBlock) {
-            self.successBlock(self, self.m3u8Url, inputPath, outputPath);
+            self.successBlock(self, self.m3u8Url, tsFilePath, mp4FilePath);
         }
         return;
     }
-    [[FFmpegManager sharedManager] converWithInputPath:inputPath outputPath:outputPath processBlock:^(float process) {
+    [[FFmpegManager sharedManager] convertWithTSFilePath:tsFilePath mp4FilePath:mp4FilePath processBlock:^(FFmpegManager *manager, NSString *tsFilePath, float process) {
         
         NSLog(@"转码进度：%.2f%%\n", process * 100);
         if (process > 0.99) {
@@ -252,20 +252,28 @@
         if (self.progressBlock) {
             self.progressBlock(self, self.m3u8Url, process);
         }
-
-    } completionBlock:^(NSError *error) {
         
-        if (error) {
-            NSLog(@"转码失败 : %@", error);
-            if (self.failureBlock) {
-                self.failureBlock(self, self.m3u8Url);
-            }
-        } else {
-            NSLog(@"转码成功，请在相应路径查看：%@\n", outputPath);
-            if (self.successBlock) {
-                self.successBlock(self, self.m3u8Url, inputPath, outputPath);
-            }
+    } successBlock:^(FFmpegManager *manager, NSString *tsFilePath, NSString *mp4FilePath) {
+        
+        NSLog(@"转码成功，请在相应路径查看：%@\n", mp4FilePath);
+        if (self.successBlock) {
+            self.successBlock(self, self.m3u8Url, tsFilePath, mp4FilePath);
         }
+        
+    } failureBlock:^(FFmpegManager *manager, NSString *tsFilePath, NSError *error, FMConvertFailureReason failureReason) {
+        
+        NSLog(@"转码失败 : %@", error);
+        if (self.failureBlock) {
+            self.failureBlock(self, self.m3u8Url);
+        }
+        
+    } cancelBlock:^(FFmpegManager *manager, NSString *tsFilePath) {
+        
+        NSLog(@"转码取消 : %@", tsFilePath);
+        if (self.failureBlock) {
+            self.failureBlock(self, self.m3u8Url);
+        }
+        
     }];
 }
 

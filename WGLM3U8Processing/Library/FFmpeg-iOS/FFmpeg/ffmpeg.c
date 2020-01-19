@@ -147,6 +147,8 @@ int         nb_output_files   = 0;
 
 FilterGraph **filtergraphs;
 int        nb_filtergraphs;
+int        trans_processing;
+int        shouldBreak;
 
 #if HAVE_TERMIOS_H
 
@@ -582,6 +584,8 @@ static void ffmpeg_cleanup(int ret)
     }
     term_exit();
     ffmpeg_exited = 1;
+    trans_processing = 0;
+    shouldBreak = 0;
 }
 
 void remove_avoptions(AVDictionary **a, AVDictionary *b)
@@ -1035,7 +1039,7 @@ static void do_video_out(AVFormatContext *s,
             sizeof(ost->last_nb0_frames[0]) * (FF_ARRAY_ELEMS(ost->last_nb0_frames) - 1));
     ost->last_nb0_frames[0] = nb0_frames;
 
-    if (nb0_frames == 0 && ost->last_dropped) {
+     if (nb0_frames == 0 && ost->last_dropped) {
         nb_frames_drop++;
         av_log(NULL, AV_LOG_VERBOSE,
                "*** dropping frame %d from stream %d at ts %"PRId64"\n",
@@ -1161,7 +1165,9 @@ static void do_video_out(AVFormatContext *s,
         }
 
         ost->frames_encoded++;
-
+        
+        av_log(NULL, AV_LOG_DEBUG, "WGL PTS :%lld, pkt_pts:%lld, pkt_dts:%lld\n", in_picture->pts, in_picture->pkt_pts, in_picture->pkt_dts);
+        printf("WGL PTS :%lld, pkt_pts:%lld, pkt_dts:%lld\n", in_picture->pts, in_picture->pkt_pts, in_picture->pkt_dts);
         ret = avcodec_encode_video2(enc, &pkt, in_picture, &got_packet);
         update_benchmark("encode_video %d.%d", ost->file_index, ost->index);
         if (ret < 0) {
@@ -1303,10 +1309,22 @@ static int reap_filters(int flush)
         }
         filtered_frame = ost->filtered_frame;
 
+        if (shouldBreak) {
+            exit_program(1);
+            break;
+        }
+        
         while (1) {
             double float_pts = AV_NOPTS_VALUE; // this is identical to filtered_frame.pts but with higher precision
             ret = av_buffersink_get_frame_flags(filter, filtered_frame,
                                                AV_BUFFERSINK_FLAG_NO_REQUEST);
+
+           if (shouldBreak) {
+               exit_program(1);
+               break;
+           }
+            double testRef = AVERROR_EOF;
+            av_log(NULL, AV_LOG_DEBUG, "AVERROR_EOF: %d", AVERROR_EOF);
             if (ret < 0) {
                 if (ret != AVERROR(EAGAIN) && ret != AVERROR_EOF) {
                     av_log(NULL, AV_LOG_WARNING,
@@ -4082,7 +4100,11 @@ static int transcode_step(void)
 
     if (ret < 0)
         return ret == AVERROR_EOF ? 0 : ret;
-
+    
+    if (shouldBreak) {
+        exit_program(1);
+        return 0;
+    }
     return reap_filters(0);
 }
 
@@ -4264,13 +4286,45 @@ static void log_callback_null(void *ptr, int level, const char *fmt, va_list vl)
 {
 }
 
+void cleanup() {
+    main_return_code = 0;
+    received_sigterm = 0;
+    received_nb_signals = 0;
+    ffmpeg_exited = 0;
+ 
+    run_as_daemon = 0;
+    nb_frames_dup = 0;
+    nb_frames_drop = 0;
+    progress_avio = NULL;
+ 
+    input_streams = NULL;
+    nb_input_streams = 0;
+    input_files = NULL;
+    nb_input_files = 0;
+ 
+    output_streams = NULL;
+    nb_output_streams = 0;
+    output_files = NULL;
+    nb_output_files = 0;
+ 
+    filtergraphs = NULL;
+    nb_filtergraphs = 0;
+    shouldBreak = 0;
+}
+
 int ffmpeg_main(int argc, char **argv)
 {
+    if (1==trans_processing) {
+        return 0;
+    }
     int ret;
     int64_t ti;
-
+    if(1 != trans_processing){
+        trans_processing = 1;
+    }
+    cleanup();
     register_exit(ffmpeg_cleanup);
-
+    
     setvbuf(stderr,NULL,_IONBF,0); /* win32 runtime needs this */
 
     av_log_set_flags(AV_LOG_SKIP_REPEATED);
@@ -4331,4 +4385,16 @@ int ffmpeg_main(int argc, char **argv)
 
     exit_program(received_nb_signals ? 255 : main_return_code);
     return main_return_code;
+}
+
+void cancelProgram ()
+{
+    exit_program(received_nb_signals ? 255 : main_return_code);
+//    pthread_exit(NULL);
+}
+
+int setBreak()
+{
+    shouldBreak = 1;
+    return 0;
 }

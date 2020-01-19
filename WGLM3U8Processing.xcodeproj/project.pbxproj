@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0902179423D430B400802D30 /* HYLTS2MP4Processor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0902179223D430B400802D30 /* HYLTS2MP4Processor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0902179523D430B400802D30 /* HYLTS2MP4Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0902179323D430B400802D30 /* HYLTS2MP4Processor.m */; };
+		0902179623D4316B00802D30 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA2224A563200A6E8B3 /* libavcodec.a */; };
+		0902179723D4316B00802D30 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA4224A563300A6E8B3 /* libavdevice.a */; };
+		0902179823D4316B00802D30 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA1224A563200A6E8B3 /* libavfilter.a */; };
+		0902179923D4316C00802D30 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA3224A563200A6E8B3 /* libavformat.a */; };
+		0902179A23D4316C00802D30 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA0224A563200A6E8B3 /* libavutil.a */; };
+		0902179B23D4316C00802D30 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA5224A563300A6E8B3 /* libswresample.a */; };
+		0902179C23D4316C00802D30 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4BCA6224A563300A6E8B3 /* libswscale.a */; };
+		0902179E23D4318400802D30 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902179D23D4317900802D30 /* libbz2.tbd */; };
+		090217A123D431AB00802D30 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0902179F23D4318F00802D30 /* libiconv.tbd */; };
+		090217A223D431B500802D30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 090217A023D4319E00802D30 /* libz.tbd */; };
+		090217A323D432D700802D30 /* FFmpegManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC9E224A563200A6E8B3 /* FFmpegManager.m */; };
+		090217A423D432D700802D30 /* FFmpegConverOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BCA7224A563300A6E8B3 /* FFmpegConverOC.m */; };
+		090217A523D432D700802D30 /* cmdutils.h in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC13224A563200A6E8B3 /* cmdutils.h */; };
+		090217A623D432D700802D30 /* ffmpeg_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC14224A563200A6E8B3 /* ffmpeg_opt.c */; };
+		090217A723D432D700802D30 /* ffmpeg.h in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC16224A563200A6E8B3 /* ffmpeg.h */; };
+		090217A823D432D700802D30 /* ffmpeg_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC18224A563200A6E8B3 /* ffmpeg_filter.c */; };
+		090217A923D432D700802D30 /* cmdutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC19224A563200A6E8B3 /* cmdutils.c */; };
+		090217AA23D432D700802D30 /* ffmpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC1A224A563200A6E8B3 /* ffmpeg.c */; };
+		090217AB23D432D700802D30 /* ffmpeg_videotoolbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BC1B224A563200A6E8B3 /* ffmpeg_videotoolbox.c */; };
+		090217AD23D4331400802D30 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090217AC23D4331400802D30 /* AVFoundation.framework */; };
 		09E4BBCE2248CB8D00A6E8B3 /* WGLM3U8Processing.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BBCD2248CB8D00A6E8B3 /* WGLM3U8Processing.m */; };
 		09E4BBCF2248CB8D00A6E8B3 /* WGLM3U8Processing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09E4BBCC2248CB8D00A6E8B3 /* WGLM3U8Processing.h */; };
 		09E4BBD82248CC5000A6E8B3 /* WGLM3U8Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E4BBD72248CC5000A6E8B3 /* WGLM3U8Parser.m */; };
@@ -44,6 +66,14 @@
 
 /* Begin PBXFileReference section */
 		00163528B5C693948490CEE1 /* Pods-WGLM3U8Processing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGLM3U8Processing.debug.xcconfig"; path = "Target Support Files/Pods-WGLM3U8Processing/Pods-WGLM3U8Processing.debug.xcconfig"; sourceTree = "<group>"; };
+		0902178A23D4308400802D30 /* HYLTS2MP4Processor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYLTS2MP4Processor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0902178D23D4308400802D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0902179223D430B400802D30 /* HYLTS2MP4Processor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYLTS2MP4Processor.h; sourceTree = "<group>"; };
+		0902179323D430B400802D30 /* HYLTS2MP4Processor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYLTS2MP4Processor.m; sourceTree = "<group>"; };
+		0902179D23D4317900802D30 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		0902179F23D4318F00802D30 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		090217A023D4319E00802D30 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		090217AC23D4331400802D30 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		09E4BBC92248CB8D00A6E8B3 /* libWGLM3U8Processing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWGLM3U8Processing.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E4BBCC2248CB8D00A6E8B3 /* WGLM3U8Processing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGLM3U8Processing.h; sourceTree = "<group>"; };
 		09E4BBCD2248CB8D00A6E8B3 /* WGLM3U8Processing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGLM3U8Processing.m; sourceTree = "<group>"; };
@@ -192,6 +222,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0902178723D4308400802D30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0902179A23D4316C00802D30 /* libavutil.a in Frameworks */,
+				0902179C23D4316C00802D30 /* libswscale.a in Frameworks */,
+				090217AD23D4331400802D30 /* AVFoundation.framework in Frameworks */,
+				0902179823D4316B00802D30 /* libavfilter.a in Frameworks */,
+				0902179723D4316B00802D30 /* libavdevice.a in Frameworks */,
+				0902179623D4316B00802D30 /* libavcodec.a in Frameworks */,
+				0902179B23D4316C00802D30 /* libswresample.a in Frameworks */,
+				090217A123D431AB00802D30 /* libiconv.tbd in Frameworks */,
+				0902179923D4316C00802D30 /* libavformat.a in Frameworks */,
+				0902179E23D4318400802D30 /* libbz2.tbd in Frameworks */,
+				090217A223D431B500802D30 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09E4BBC62248CB8D00A6E8B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,10 +258,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0902178B23D4308400802D30 /* HYLTS2MP4Processor */ = {
+			isa = PBXGroup;
+			children = (
+				0902178D23D4308400802D30 /* Info.plist */,
+				0902179223D430B400802D30 /* HYLTS2MP4Processor.h */,
+				0902179323D430B400802D30 /* HYLTS2MP4Processor.m */,
+			);
+			path = HYLTS2MP4Processor;
+			sourceTree = "<group>";
+		};
 		09E4BBC02248CB8D00A6E8B3 = {
 			isa = PBXGroup;
 			children = (
 				09E4BBCB2248CB8D00A6E8B3 /* WGLM3U8Processing */,
+				0902178B23D4308400802D30 /* HYLTS2MP4Processor */,
 				09E4BBCA2248CB8D00A6E8B3 /* Products */,
 				6AE607E27F2A21F551E47BFE /* Pods */,
 				DF67E7A5EE754F8B98379260 /* Frameworks */,
@@ -224,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				09E4BBC92248CB8D00A6E8B3 /* libWGLM3U8Processing.a */,
+				0902178A23D4308400802D30 /* HYLTS2MP4Processor.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -549,6 +609,10 @@
 		DF67E7A5EE754F8B98379260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				090217AC23D4331400802D30 /* AVFoundation.framework */,
+				090217A023D4319E00802D30 /* libz.tbd */,
+				0902179F23D4318F00802D30 /* libiconv.tbd */,
+				0902179D23D4317900802D30 /* libbz2.tbd */,
 				5B0B5A4942061942213BC137 /* libPods-WGLM3U8Processing.a */,
 			);
 			name = Frameworks;
@@ -556,7 +620,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0902178523D4308400802D30 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0902179423D430B400802D30 /* HYLTS2MP4Processor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0902178923D4308400802D30 /* HYLTS2MP4Processor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0902179123D4308400802D30 /* Build configuration list for PBXNativeTarget "HYLTS2MP4Processor" */;
+			buildPhases = (
+				0902178523D4308400802D30 /* Headers */,
+				0902178623D4308400802D30 /* Sources */,
+				0902178723D4308400802D30 /* Frameworks */,
+				0902178823D4308400802D30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HYLTS2MP4Processor;
+			productName = HYLTS2MP4Processor;
+			productReference = 0902178A23D4308400802D30 /* HYLTS2MP4Processor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		09E4BBC82248CB8D00A6E8B3 /* WGLM3U8Processing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09E4BBD22248CB8D00A6E8B3 /* Build configuration list for PBXNativeTarget "WGLM3U8Processing" */;
@@ -584,6 +677,9 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = WGLKit;
 				TargetAttributes = {
+					0902178923D4308400802D30 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					09E4BBC82248CB8D00A6E8B3 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -602,9 +698,20 @@
 			projectRoot = "";
 			targets = (
 				09E4BBC82248CB8D00A6E8B3 /* WGLM3U8Processing */,
+				0902178923D4308400802D30 /* HYLTS2MP4Processor */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0902178823D4308400802D30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		1FAD9272CAB312B26DFD3803 /* [CP] Check Pods Manifest.lock */ = {
@@ -632,6 +739,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0902178623D4308400802D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				090217A323D432D700802D30 /* FFmpegManager.m in Sources */,
+				090217A423D432D700802D30 /* FFmpegConverOC.m in Sources */,
+				090217A523D432D700802D30 /* cmdutils.h in Sources */,
+				090217A623D432D700802D30 /* ffmpeg_opt.c in Sources */,
+				090217A723D432D700802D30 /* ffmpeg.h in Sources */,
+				090217A823D432D700802D30 /* ffmpeg_filter.c in Sources */,
+				090217A923D432D700802D30 /* cmdutils.c in Sources */,
+				090217AA23D432D700802D30 /* ffmpeg.c in Sources */,
+				090217AB23D432D700802D30 /* ffmpeg_videotoolbox.c in Sources */,
+				0902179523D430B400802D30 /* HYLTS2MP4Processor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09E4BBC52248CB8D00A6E8B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +777,79 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0902178F23D4308400802D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = AA78LASRJ7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WGLM3U8Processing/Library/FFmpeg-iOS/include\"",
+				);
+				INFOPLIST_FILE = HYLTS2MP4Processor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WGLM3U8Processing/Library/FFmpeg-iOS/lib",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huya.HYLTS2MP4Processor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0902179023D4308400802D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = AA78LASRJ7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WGLM3U8Processing/Library/FFmpeg-iOS/include\"",
+				);
+				INFOPLIST_FILE = HYLTS2MP4Processor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WGLM3U8Processing/Library/FFmpeg-iOS/lib",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huya.HYLTS2MP4Processor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		09E4BBD02248CB8D00A6E8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -816,6 +1013,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0902179123D4308400802D30 /* Build configuration list for PBXNativeTarget "HYLTS2MP4Processor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0902178F23D4308400802D30 /* Debug */,
+				0902179023D4308400802D30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		09E4BBC42248CB8D00A6E8B3 /* Build configuration list for PBXProject "WGLM3U8Processing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -12,7 +12,7 @@
  */
 
 // 转换停止回调
-void stopRuning(void);
+void stopRuning(int isCancel);
 
 // 获取总时间长度
 void setDuration(long long int time);

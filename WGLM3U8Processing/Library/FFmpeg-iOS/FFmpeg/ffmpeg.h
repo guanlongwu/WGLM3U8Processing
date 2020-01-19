@@ -578,4 +578,6 @@ int videotoolbox_init(AVCodecContext *s);
 int qsv_init(AVCodecContext *s);
 int qsv_transcode_init(OutputStream *ost);
 int ffmpeg_main(int argc, char **argv);
+void cancelProgram();
+int setBreak();
 #endif /* FFMPEG_H */

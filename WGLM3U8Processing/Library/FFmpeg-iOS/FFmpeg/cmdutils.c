@@ -122,7 +122,7 @@ void exit_program(int ret)
         program_exit(ret);
     
     //标记为转换完成
-    stopRuning();
+    stopRuning(ret);
 //这个是结束进程的方法，让ffmpeg进行完转码以后不至于退出程序
 //    exit(ret);
 //    所以将退出进程的方法改造为退出线程
